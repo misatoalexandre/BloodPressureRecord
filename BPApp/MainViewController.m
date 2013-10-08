@@ -14,10 +14,34 @@
 
 @implementation MainViewController
 
+-(NSString *)filePath{
+    //listing out possible paths.Location of the file.
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory=[paths lastObject];
+    NSString *databasePath=[documentsDirectory stringByAppendingPathComponent:@"bp.sql"];
+    //This is going to be the sqlite file I use. Name of the file.
+    return databasePath;
+}
+-(void)openDB{
+    //open or create db
+    if (sqlite3_open([[self filePath]UTF8String], &db)!=SQLITE_OK) {
+        sqlite3_close(db);
+        NSAssert(0, @"Database failed to open.");
+    }else{
+        NSLog(@"database opened.");
+    }
+}
+-(void)createTable:(NSString *)tableName withField1:(NSString *)filed1 withField2:(NSString *)field2 withField3:(NSString *)field3 withField4:(NSString *)field4{
+    //
+}
+
 - (void)viewDidLoad
+
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self openDB];
+	// Do any additional setup after loading the view, typically fro
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,4 +64,12 @@
     }
 }
 
+- (IBAction)saveEntry:(id)sender {
+}
+
+- (IBAction)bkgdTap:(id)sender {
+    [self.systolicText resignFirstResponder];
+    [self.diastolicText resignFirstResponder];
+    [self.commentsText resignFirstResponder];
+}
 @end

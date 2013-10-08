@@ -22,6 +22,7 @@
 		53AB3190180463A1007F7F75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AB316F180463A1007F7F75 /* UIKit.framework */; };
 		53AB3198180463A1007F7F75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53AB3196180463A1007F7F75 /* InfoPlist.strings */; };
 		53AB319A180463A1007F7F75 /* BPAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53AB3199180463A1007F7F75 /* BPAppTests.m */; };
+		53AB31A418046631007F7F75 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AB31A318046631007F7F75 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		53AB3195180463A1007F7F75 /* BPAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BPAppTests-Info.plist"; sourceTree = "<group>"; };
 		53AB3197180463A1007F7F75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53AB3199180463A1007F7F75 /* BPAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAppTests.m; sourceTree = "<group>"; };
+		53AB31A318046631007F7F75 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53AB31A418046631007F7F75 /* libsqlite3.0.dylib in Frameworks */,
 				53AB316E180463A1007F7F75 /* CoreGraphics.framework in Frameworks */,
 				53AB3170180463A1007F7F75 /* UIKit.framework in Frameworks */,
 				53AB316C180463A1007F7F75 /* Foundation.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		53AB316A180463A1007F7F75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53AB31A318046631007F7F75 /* libsqlite3.0.dylib */,
 				53AB316B180463A1007F7F75 /* Foundation.framework */,
 				53AB316D180463A1007F7F75 /* CoreGraphics.framework */,
 				53AB316F180463A1007F7F75 /* UIKit.framework */,
