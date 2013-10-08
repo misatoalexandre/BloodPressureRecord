@@ -75,6 +75,26 @@
 }
 
 - (IBAction)saveEntry:(id)sender {
+    //collect the info from the text fields.
+    int systolic=[self.systolicText.text intValue];
+    int diastolic=[self.diastolicText.text intValue];
+    NSString *comments=self.commentsText.text;
+    NSDate *theDate=[NSDate date];
+    
+    //Sql statements. Name of the fields and values.
+    NSString *sql=[NSString stringWithFormat:@"INSERT INTO summary ('theDate', 'systolic', 'diastolic', 'comments') VALUES ('%@', '%d','%d', '%@')", theDate, systolic, diastolic, comments];
+    //execute the update.
+    char *err;
+    if (sqlite3_exec(db, [sql UTF8String], NULL, NULL, &err) !=SQLITE_OK) {
+        sqlite3_close(db);
+        NSAssert(0,@"COuld not update table.");
+    }else{
+        NSLog(@"table updated.");
+    }
+    
+    self.systolicText.text=@"";
+    self.diastolicText.text=@"";
+    self.commentsText.text=@"";
 }
 
 - (IBAction)bkgdTap:(id)sender {
