@@ -32,7 +32,7 @@
     }
 }
 -(void)createTable:(NSString *)tableName withField1:(NSString *)filed1 withField2:(NSString *)field2 withField3:(NSString *)field3 withField4:(NSString *)field4{
-    //
+    //create a table
 }
 
 - (void)viewDidLoad
