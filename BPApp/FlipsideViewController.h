@@ -24,6 +24,7 @@
 
 }
 @property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, retain) NSMutableArray *dates;
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
 
 -(NSString *)filePath;

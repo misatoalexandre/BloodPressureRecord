@@ -18,6 +18,7 @@
 {
     [super viewDidLoad];
     self.entries=[[NSMutableArray alloc]init];
+    self.dates=[[NSMutableArray alloc]init];
     [self openDB];
     //SQL query: select everything.
     NSString *sql=[NSString stringWithFormat:@"SELECT * FROM summary"];
@@ -39,7 +40,11 @@
             NSString *field4Str=[[NSString alloc]initWithUTF8String:field4];
             
             NSString *str=[[NSString alloc]initWithFormat: @"%@/%@ -%@", field2Str, field3Str, field4Str];
+            //NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+            //[formatter setDateStyle:NSDateFormatterShortStyle];
+           
             [self.entries addObject:str];
+            [self.dates addObject:field1Str];
             
         }
     }
@@ -87,6 +92,7 @@
     static NSString *cellIdentifier=@"Cell";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     cell.textLabel.text=[self.entries objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text=[self.dates objectAtIndex:indexPath.row];
     return cell;
 }
 
